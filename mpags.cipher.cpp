@@ -47,7 +47,37 @@ void transformChar(char input)
 
 }
 
-int main(){
+int main(int argc, char* argv[]){
+
+  //iter over the pass array
+  for (int i{0}; i<argc; i++)
+    {
+      if (std::string(argv[i]) == "--help")
+	{
+	  // argument is a --helf argument                              
+	  std::cout<<std::string(argv[i])<<" : bablablab"<<std::endl;
+	}
+      else if (std::string(argv[i]) == "-h")
+	{
+	  //if argument is -h                             
+	  std::cout<<std::string(argv[i])<<" : balavkavk"<<std::endl;
+	}
+      else if (std::string(argv[i])== "-i")
+	{ //if argument is -i
+	  std::cout<<std::string(argv[i])<<" : inputFile"<<std::endl;
+
+	}
+      else if (std::string(argv[i])== "-o")
+	{ //if argument is -o
+	  std::cout<<std::string(argv[i])<<" : OutputFile"<<std::endl;
+	}
+      else
+	{//Other argument                                                                                                                                                                                                 
+	  std::cout<<std::string(argv[i])<<" is a not known argument"<<std::endl;
+	}
+
+    }
+
 
 
   char input{'x'};
