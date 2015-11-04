@@ -4,6 +4,7 @@
 *.o
 *.obj
 mpags.cipher
+mpags
 
 # Precompiled Headers
 *.gch

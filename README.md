@@ -22,3 +22,13 @@ MPAGSCipher
     └── catch.hpp         C++ Header for the Catch testing framework
 ```
 
+#To install change CMakes's defaul directory for installation to ~/Software,
+#by reconfigure the edit_cache CMAKE_INSTALL_PREFIX to ~/Software.
+
+
+
+
+
+
+
+
