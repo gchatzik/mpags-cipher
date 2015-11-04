@@ -5,7 +5,9 @@
 #include <vector>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdexcept>
 
+std::string numbers{"0123456789"};
 
 //**********************************************************************************************************
 //  This is a function that takes as arguments a container of lower case letter of alphabet, a container
@@ -23,10 +25,14 @@ std::string transformChar(char input,const std::vector<char>& alphabet, const st
       tmp+=toupper(input) ;
     } else {tmp+= input ; }
     return tmp;
-
+    
   } else {
-    int intg{input-'0'} ;
-    return num[intg] ;
+    for (int i{0}; i<10; i++) {
+      if (input == numbers[i]) {
+	int intg{input-'0'} ;
+	return num[intg] ;
+      } else {continue ;}
+    }
   }
 }
 
@@ -35,9 +41,10 @@ std::string transformChar(char input,const std::vector<char>& alphabet, const st
 std::string transformChar(char input,const std::vector<char>& alphabet)
 {
   std::string tmp{""};
-  if (islower(input)) {
-    tmp+=toupper(input) ;
-  } else {tmp+= input ; }
-  return tmp;
-  
+  if (isalpha(input)){
+    if (islower(input)) {
+      tmp+=toupper(input) ;
+    } else {tmp+= input ;} 
+    return tmp;
+  } else{throw std::invalid_argument("INFO - ERROR: I dont like special characters :)") ;}
 }
